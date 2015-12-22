@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Moving Path Handles</title>
+<style>
+    #canvas {
+        width: 100%;
+        height: 100%;
+        background-color: #CCC;
+    }
+</style>
+</head>
+<body style="margin:0;overflow:hidden">
+	<canvas id="canvas" resize></canvas>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.24/paper-core.min.js"></script>
+    <script src="editor.js"></script>
+    <script>
+        paper.install(window);
+        paper.setup('canvas');
+        tool = new Tool();
+        var editor = new Editor();
+        tool.onMouseDown = editor.clickEvent.bind(editor);
+        tool.onMouseDrag = editor.dragEvent.bind(editor);
+    </script>
+</body>
+</html>
