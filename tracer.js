@@ -7,7 +7,7 @@ var ImageTracer = function () {
     this.loadImage = function () {
         var img = new Image(),
             that = this;
-        img.src = 'piano.png';
+        img.src = 'buddies/pig.jpg';
         img.onload = function () {
             that.resizeCanvasAndDrawRaster(img);
             that.initPath();
