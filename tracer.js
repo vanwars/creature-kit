@@ -39,9 +39,9 @@ var ImageTracer = function () {
     };
 
     this.resizeCanvasAndDrawRaster = function (image) {
-        $('#my_canvas').width(image.width + 2 * this.padding);
+        /*$('#my_canvas').width(image.width + 2 * this.padding);
         $('#my_canvas').height(image.height + 2 * this.padding);
-        view.viewSize = new Size(image.width + 2 * this.padding, image.height + 2 * this.padding);
+        view.viewSize = new Size(image.width + 2 * this.padding, image.height + 2 * this.padding);*/
         this.raster = new Raster(image);
         this.raster.position = new Point(this.raster.width / 2 + this.padding, this.raster.height / 2 + this.padding);
         view.draw();

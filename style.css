@@ -1,8 +1,9 @@
-/*#my_canvas {
-    width: 100%;
+body, html {
+    margin: 0px;
     height: 100%;
-}*/
-body, html { margin: 0px; height: 100%; }
+    overflow: hidden;
+    background-color: #FFF;
+}
 
 .container {
     display: flex; /* or inline-flex */
@@ -11,20 +12,48 @@ body, html { margin: 0px; height: 100%; }
     height: 100%;
 }
 .container > * {
-    background-color: #EEE;
+    /*background-color: #EEE;*/
     margin: auto;
     overflow: auto;
     height: 100%;
-    padding: 20px;
 }
 
 .canvas-container {
     width: 60%;
 }
+
 #my_canvas {
-    background-color: #CCC;
+    background-color: transparent;
+    background-size: 100px 100px;    
+    background-image:   repeating-linear-gradient(0deg, #CCC, #CCC 1px, transparent 1px, transparent 100px),
+                        repeating-linear-gradient(-90deg, #CCC, #CCC 1px, transparent 1px, transparent 100px),
+                        repeating-linear-gradient(0deg, #EEE, #EEE 1px, transparent 1px, transparent 10px),
+                        repeating-linear-gradient(-90deg, #EEE, #EEE 1px, transparent 1px, transparent 10px);
+    height:100%;
+    margin-left: 30px;
 }
 .code-container {
     width: 40%;
-    background-color: #fff;
+    background-image: url('tree_bark.png');
+    padding: 20px;
+}
+
+ul {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    background-color: #CCC;
+    height: 100%;
+    border-right: solid 1px #666;
+}
+
+li i {
+    display: block;
+    color: #444;
+    padding: 5px 0 2px 8px;
+}
+li.active, li:hover {
+    background: #FFF;
 }
