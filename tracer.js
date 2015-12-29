@@ -7,7 +7,7 @@ var ImageTracer = function () {
     this.loadImage = function () {
         var img = new Image(),
             that = this;
-        img.src = 'buddies/pig.jpg';
+        img.src = 'buddies/mouse.jpg';
         img.onload = function () {
             that.resizeCanvasAndDrawRaster(img);
             that.initPath();
@@ -27,7 +27,8 @@ var ImageTracer = function () {
             segments: [],
             strokeColor: '#B6FFBF',
             strokeWidth: 3,
-            strokeCap: 'round'//,
+            strokeCap: 'round',
+            fullySelected: true
             //closed: true
         });
         this.segments = [];
@@ -67,8 +68,9 @@ var ImageTracer = function () {
     
     this.updatePathAndReturnCode = function (event) {
         this.path.add(event.point);
+        this.path.smooth();
         this.segments.push([parseInt(event.point.x) - this.padding, parseInt(event.point.y) - this.padding]);
-        this.circles.push(
+        /*this.circles.push(
             new Path.Circle({
                 center: event.point,
                 radius: 4,
@@ -76,7 +78,7 @@ var ImageTracer = function () {
                 strokeColor: '#B6FFBF',
                 strokeWidth: 2
             })
-        );
+        );*/
         // Output Code:
         var s = "var path = new Path({";
         s += "<br>&nbsp;&nbsp;segments: " + JSON.stringify(this.segments, null, 0);
