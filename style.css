@@ -5,13 +5,13 @@ body, html {
     background-color: #FFF;
 }
 
-.container {
+.main-container {
     display: flex; /* or inline-flex */
     align-items: flex-start;
     justify-content: space-around;
     height: 100%;
 }
-.container > * {
+.main-container > * {
     /*background-color: #EEE;*/
     margin: auto;
     overflow: auto;
@@ -36,6 +36,9 @@ body, html {
     width: 40%;
     background-image: url('tree_bark.png');
     padding: 20px;
+}
+.code-container pre {
+    min-height: 300px;
 }
 
 ul {
